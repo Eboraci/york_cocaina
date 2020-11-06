@@ -31,13 +31,13 @@ function func.checkPayment(id)
 		if src[id].re ~= nil then
 			if vRP.getInventoryWeight(user_id)+vRP.getItemWeight(src[id].item)*src[id].itemqtd <= vRP.getInventoryMaxWeight(user_id) then
 				if vRP.tryGetInventoryItem(user_id,src[id].re,src[id].reqtd,false) then
-					vRP.daritemIventario(user_id,src[id].item,src[id].itemqtd,false)
+					vRP.giveInventoryItem(user_id,src[id].item,src[id].itemqtd,false)
 					return true
 				end
 			end
 		else
 			if vRP.getInventoryWeight(user_id)+vRP.getItemWeight(src[id].item)*src[id].itemqtd <= vRP.getInventoryMaxWeight(user_id) then
-				vRP.daritemIventario(user_id,src[id].item,src[id].itemqtd,false)
+				vRP.giveInventoryItem(user_id,src[id].item,src[id].itemqtd,false)
 				return true
 			end
 		end
